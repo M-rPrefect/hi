@@ -1,0 +1,39 @@
+{
+  "name": "vue3-starry-sky",
+  "private": false,
+  "version": "0.1.0",
+  "keywords": [
+    "starry",
+    "sky",
+    "starry-sky",
+    "vue3-starry-sky",
+    "vue-starry-sky"
+  ],
+  "scripts": {
+    "dev": "vite --force --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/vue3-starry-sky.umd.js",
+  "module": "lib/vue3-starry-sky.es.js",
+  "exports": {
+    "./lib/style.css": "./lib/style.css",
+    ".": {
+      "import": "./lib/vue3-starry-sky.es.js",
+      "require": "./lib/vue3-starry-sky.umd.js"
+    }
+  },
+  "dependencies": {
+    "element-plus": "^2.2.32",
+    "vue": "^3.2.25",
+    "vue-router": "^4.1.6",
+    "vue3-starry-sky": "^0.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.9"
+  }
+}
