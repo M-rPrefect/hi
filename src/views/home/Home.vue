@@ -1,43 +1,31 @@
-<template >
+<template>
   <div style="height: 100%;width: 100%">
-    <div style="height: 100%;width: 100%" class="home">
-      <ul  v-infinite-scroll="load" class="infinite-list" style="overflow: auto">
-        <li v-for="i in count" :key="i" class="infinite-list-item">{{ i }}</li>
-      </ul>
-    </div>
+    <Header/>
+    <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick" stretch = "true">
+      <el-tab-pane label="世界" name="first"><INFOS/></el-tab-pane>
+      <el-tab-pane label="Ta" name="second"><INFOS/></el-tab-pane>
+      <el-tab-pane label="我的" name="third"><INFOS/></el-tab-pane>
+    </el-tabs>
   </div>
 
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-const count = ref(0)
-const load = () => {
-  count.value += 2
+
+import {ref} from 'vue'
+import type { TabsPaneContext } from 'element-plus'
+import INFOS from "../../components/Infomsg.vue"
+import Header from "../../components/Header.vue"
+
+
+const activeName = ref('first')
+
+const handleClick = (tab: TabsPaneContext, event: Event) => {
+  console.log(tab, event)
 }
 </script>
 
 <style>
-.home{
-  display: flex;
-}
-.infinite-list {
-  flex: 1;
-  height: 1000px;
-  padding: 0;
-  margin-left: 0;
-  list-style: none;
-}
-.infinite-list .infinite-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  background: var(--el-color-primary-light-9);
-  margin: 10px;
-  color: var(--el-color-primary);
-}
-.infinite-list .infinite-list-item + .list-item {
-  margin-top: 10px;
-}
+
+
 </style>
