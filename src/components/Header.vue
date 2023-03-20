@@ -11,7 +11,7 @@
 
 <style scoped>
 #header-body{
-  height: 200px;
+  height: 150px;
   width: 100%;
   padding: -20px -20px 1px -20px;
   margin: 0;
